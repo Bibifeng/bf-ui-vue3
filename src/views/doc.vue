@@ -32,7 +32,7 @@
         },
         setup() {
             const asideVisible = inject<Ref<boolean>>('asideVisible');
-            return {asideVisible}
+            return { asideVisible }
         }
     }
 </script>
