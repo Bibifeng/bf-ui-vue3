@@ -1,6 +1,6 @@
 <template>
     <div class="top-nav">
-        <div class="logo">
+        <div class="logo" @click="showAside">
               <img alt="Vue logo" src="../assets/logo.png" />
         </div>
         <ul class="menu">
@@ -10,11 +10,16 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+    import { Ref, inject } from 'vue';
     export default {
         name: "topnav",
-        data() {
-            return {}
+        setup() {
+            const asideVisible = inject<Ref<boolean>>('asideVisible');
+            const showAside = () => {
+                asideVisible.value = !asideVisible.value;
+            };
+            return {showAside}
         }
     }
 </script>
@@ -33,6 +38,7 @@
             height: 4em;
         }
         margin: 6px;
+        cursor: pointer;
     }
     .menu {
         flex: 1;

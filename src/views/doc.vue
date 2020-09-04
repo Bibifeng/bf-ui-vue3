@@ -1,6 +1,6 @@
 <template>
     <topnav></topnav>
-    <div class="content">
+    <div class="content" v-if="asideVisible">
         <aside>
             <h2>组件列表</h2>
             <ol>
@@ -23,14 +23,16 @@
 </template>
 
 <script lang="ts">
-    import Topnav from '../components/topnav.vue'
+    import Topnav from '../components/topnav.vue';
+    import { Ref, inject } from 'vue';
     export default {
         name: "doc",
         components: {
             Topnav,
         },
-        data() {
-            return {}
+        setup() {
+            const asideVisible = inject<Ref<boolean>>('asideVisible');
+            return {asideVisible}
         }
     }
 </script>
