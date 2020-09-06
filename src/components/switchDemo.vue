@@ -1,0 +1,91 @@
+<template>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+    <p>switchDemo</p>
+</template>
+
+<script lang="ts">
+    export default {
+        name: "switchDemo",
+    }
+</script>
+
+<style lang="scss" scoped>
+
+</style>
