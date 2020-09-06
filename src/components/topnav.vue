@@ -1,11 +1,14 @@
 <template>
     <div class="top-nav">
-        <div class="logo" @click="showAside">
+        <span class="toggle-aside" @click="showAside"></span>
+        <div class="logo">
               <img alt="Vue logo" src="../assets/logo.png" />
         </div>
         <ul class="menu">
             <li>菜单1</li>
-            <li>菜单2</li>
+            <li>
+                <router-link to="/doc">组件文档</router-link>
+            </li>
         </ul>
     </div>
 </template>
@@ -28,10 +31,24 @@
 .top-nav {
     background: antiquewhite;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 10;
+    .toggle-aside {
+        display: none;
+        width: 24px;
+        height: 24px;
+        background: red;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
     .logo {
         img {
             width: 4em;
@@ -41,14 +58,22 @@
         cursor: pointer;
     }
     .menu {
-        flex: 1;
         display: flex;
         white-space: nowrap;
         flex-wrap: nowrap;
-        justify-content: flex-end;
-        overflow: hidden;
         > li {
             margin: 0 1em;
+        }
+    }
+    @media (max-width: 500px) {
+        .toggle-aside {
+            display: inline-block;
+        }
+        .menu {
+            display: none;
+        }
+        .logo {
+            margin: 6px auto;
         }
     }
 }
