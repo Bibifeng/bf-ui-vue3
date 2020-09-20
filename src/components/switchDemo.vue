@@ -1,6 +1,6 @@
 <template>
     <div>
-        <bf-switch :value="y" @input="y = $event"></bf-switch>
+        <bf-switch v-model:value="bool"></bf-switch>
     </div>
 </template>
 
@@ -13,9 +13,9 @@
             bfSwitch,
         },
         setup() {
-            const y = ref(false);
+            const bool = ref(false);
             return {
-                y
+                bool
             }
         },
     }
