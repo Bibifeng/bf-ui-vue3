@@ -1,88 +1,16 @@
 <template>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
-    <p>switchDemo</p>
+    <div>
+        <bf-switch></bf-switch>
+    </div>
 </template>
 
 <script lang="ts">
+    import bfSwitch from '../lib/switch.vue';
     export default {
         name: "switchDemo",
+        components: {
+            bfSwitch,
+        }
     }
 </script>
 
