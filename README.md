@@ -50,3 +50,6 @@ export default {
 - `props`不包含调用时的@事件，`attrs`包含事件
 - `props`支持`String`以外的类型，`attrs`只有String类型
 - `props`如果声明了某个属性，`attrs`里将不会包含这个属性
+
+注意：
+- UI库的样式，不能使用`scoped`，方便开发者覆盖UI样式
