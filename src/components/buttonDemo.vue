@@ -3,6 +3,7 @@
     <bf-button>你好</bf-button>
     <bf-button theme="button">你好</bf-button>
     <bf-button theme="link">你好</bf-button>
+    <bf-button theme="text">你好</bf-button>
 </template>
 
 <script lang="ts">
