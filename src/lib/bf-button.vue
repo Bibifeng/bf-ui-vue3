@@ -1,27 +1,27 @@
 <template>
-    <div :size="size">
-        <button v-bind="rest">
-            <slot></slot>
-        </button>
-    </div>
+    <button class="bf-button" :class="`theme-${theme}`">
+        <slot></slot>
+    </button>
 </template>
 
 <script lang="ts">
     export default {
-        inheritAttrs: false, // 不继承默认属性到最外层标签中
         name: "bf-button",
-        setup(props, context) {
-            const {size, ...rest} = context.attrs;
+        props: {
+            theme: {
+                type: String,
+                default: () => {
+                    return 'button'
+                }
+            }
+        },
+        setup() {
             return {
-                size,
-                rest
+
             };
         }
     }
 </script>
 
 <style lang="scss" scoped>
-div {
-    background: #f3f3f3;
-}
 </style>

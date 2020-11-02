@@ -1,11 +1,8 @@
 <template>
     <p>buttonDemo</p>
-    <bf-button
-        @click="sayHi"
-        @mouseover="sayHi"
-        @focus="sayHi"
-        size="small"
-    >你好</bf-button>
+    <bf-button>你好</bf-button>
+    <bf-button theme="button">你好</bf-button>
+    <bf-button theme="link">你好</bf-button>
 </template>
 
 <script lang="ts">
