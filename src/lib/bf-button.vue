@@ -1,18 +1,27 @@
 <template>
-    <button>
-        <slot></slot>
-    </button>
+    <div :size="size">
+        <button v-bind="rest">
+            <slot></slot>
+        </button>
+    </div>
 </template>
 
-<script>
+<script lang="ts">
     export default {
+        inheritAttrs: false, // 不继承默认属性到最外层标签中
         name: "bf-button",
-        data() {
-            return {}
+        setup(props, context) {
+            const {size, ...rest} = context.attrs;
+            return {
+                size,
+                rest
+            };
         }
     }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+div {
+    background: #f3f3f3;
+}
 </style>

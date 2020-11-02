@@ -1,6 +1,11 @@
 <template>
     <p>buttonDemo</p>
-    <bf-button>你好</bf-button>
+    <bf-button
+        @click="sayHi"
+        @mouseover="sayHi"
+        @focus="sayHi"
+        size="small"
+    >你好</bf-button>
 </template>
 
 <script lang="ts">
@@ -9,6 +14,14 @@
         name: "buttonDemo",
         components: {
             bfButton,
+        },
+        setup() {
+            const sayHi = () => {
+                console.log('hi');
+            };
+            return {
+                sayHi,
+            }
         },
     }
 </script>
