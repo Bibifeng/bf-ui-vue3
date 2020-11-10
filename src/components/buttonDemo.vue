@@ -20,6 +20,22 @@
         <bf-button theme="text" size="normal">normal</bf-button>
         <bf-button theme="text" size="big">big</bf-button>
     </div>
+    <p class="eg-title">示例二：等级程度</p>
+    <div>
+        <bf-button theme="button" level="main">main</bf-button>
+        <bf-button theme="button" level="normal">normal</bf-button>
+        <bf-button theme="button" level="danger">danger</bf-button>
+    </div>
+    <div>
+        <bf-button theme="link" level="main">main</bf-button>
+        <bf-button theme="link" level="normal">normal</bf-button>
+        <bf-button theme="link" level="danger">big</bf-button>
+    </div>
+    <div>
+        <bf-button theme="text" level="main">main</bf-button>
+        <bf-button theme="text" level="normal">normal</bf-button>
+        <bf-button theme="text" level="danger">danger</bf-button>
+    </div>
 </template>
 
 <script lang="ts">
