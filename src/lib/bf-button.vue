@@ -1,5 +1,5 @@
 <template>
-    <button class="bf-button" :class="bf_classes">
+    <button class="bf-button" :class="bf_classes" :disabled="disabled">
         <slot></slot>
     </button>
 </template>
@@ -30,6 +30,13 @@
                     return 'normal'
                 }
             },
+            // 是否禁用
+            disabled: {
+                type: Boolean,
+                default: () => {
+                    return false
+                }
+            },
         },
         setup(props) {
             const { theme, size, level } = props;
@@ -53,6 +60,7 @@
     $color: #333;
     $blue: #40a9ff;
     $red: red;
+    $grey: grey;
     $radius: 4px;
     .bf-button {
         box-sizing: border-box;
@@ -169,6 +177,21 @@
                 &:focus {
                     color: darken($red, 10%);
                 }
+            }
+        }
+        &.bf-theme-button {
+            &[disabled] {
+                cursor: not-allowed;
+                color: $grey;
+                &:hover {
+                    border-color: $grey;
+                }
+            }
+        }
+        &.bf-theme-link, &.bf-theme-text {
+            &[disabled] {
+                cursor: not-allowed;
+                color: $grey;
             }
         }
     }

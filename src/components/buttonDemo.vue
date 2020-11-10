@@ -20,7 +20,7 @@
         <bf-button theme="text" size="normal">normal</bf-button>
         <bf-button theme="text" size="big">big</bf-button>
     </div>
-    <p class="eg-title">示例二：等级程度</p>
+    <p class="eg-title">示例三：等级程度</p>
     <div>
         <bf-button theme="button" level="main">main</bf-button>
         <bf-button theme="button" level="normal">normal</bf-button>
@@ -35,6 +35,12 @@
         <bf-button theme="text" level="main">main</bf-button>
         <bf-button theme="text" level="normal">normal</bf-button>
         <bf-button theme="text" level="danger">danger</bf-button>
+    </div>
+    <p class="eg-title">示例四：禁用效果</p>
+    <div>
+        <bf-button theme="button" disabled>button主题</bf-button>
+        <bf-button theme="link" disabled>link主题</bf-button>
+        <bf-button theme="text" disabled>text主题</bf-button>
     </div>
 </template>
 
