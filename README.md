@@ -59,6 +59,10 @@ export default {
 }
 ```
 
+7. loading样式技巧
+
+将span设置成inline-block，给宽高，弄成圆形，其中一个边框色为透明，然后添加css3旋转动画即可
+
 注意：css最小影响原则
 - UI库的样式，不能使用`scoped`，方便开发者覆盖UI样式
 - 使用class名匹配，将组件的通用样式写在一个文件下，详见`/lib/bf.scss`
