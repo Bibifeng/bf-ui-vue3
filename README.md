@@ -51,6 +51,14 @@ export default {
 - `props`支持`String`以外的类型，`attrs`只有String类型
 - `props`如果声明了某个属性，`attrs`里将不会包含这个属性
 
+6. 禁用样式
+```css
+&[disabled] {
+  cursor: not-allowed;
+  color: $grey;
+}
+```
+
 注意：css最小影响原则
 - UI库的样式，不能使用`scoped`，方便开发者覆盖UI样式
 - 使用class名匹配，将组件的通用样式写在一个文件下，详见`/lib/bf.scss`
