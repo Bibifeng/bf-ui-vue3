@@ -1,23 +1,39 @@
 <template>
-    <button class="bf-button" :class="`bf-theme-${theme}`">
+    <button class="bf-button" :class="bf_classes">
         <slot></slot>
     </button>
 </template>
 
 <script lang="ts">
+    import { computed } from 'vue';
     export default {
         name: "bf-button",
         props: {
+            // 主题 包含 link、text、button（默认）
             theme: {
                 type: String,
                 default: () => {
                     return 'button'
                 }
-            }
+            },
+            // 尺寸 包含 big、normal、small
+            size: {
+                type: String,
+                default: () => {
+                    return 'normal'
+                }
+            },
         },
-        setup() {
+        setup(props) {
+            const { theme, size } = props;
+            const bf_classes = computed(() => {
+                return {
+                    [`bf-theme-${theme}`] : theme,
+                    [`bf-size-${size}`] : size,
+                }
+            });
             return {
-
+                bf_classes,
             };
         }
     }
@@ -43,35 +59,53 @@
         border: 1px solid $border-color;
         border-radius: $radius;
         box-shadow: 0 1px 0 fade-out(black, 0.95);
+
         & + & {
             margin-left: 8px;
         }
+
         &:hover,
         &:focus {
             color: $blue;
             border-color: $blue;
         }
+
         &:focus {
             outline: none;
         }
+
         &::-moz-focus-inner {
             border: 0;
         }
-        &.bf-theme-link{
+
+        &.bf-theme-link {
             border-color: transparent;
             box-shadow: none;
             color: $blue;
-            &:hover,&:focus{
+
+            &:hover, &:focus {
                 color: lighten($blue, 10%);
             }
         }
-        &.bf-theme-text{
+
+        &.bf-theme-text {
             border-color: transparent;
             box-shadow: none;
             color: inherit;
-            &:hover,&:focus{
+
+            &:hover, &:focus {
                 background: darken(white, 5%);;
             }
+        }
+        &.bf-size-big {
+            font-size: 24px;
+            height: 48px;
+            padding: 0 16px
+        }
+        &.bf-size-small {
+            font-size: 12px;
+            height: 20px;
+            padding: 0 4px;
         }
     }
 </style>

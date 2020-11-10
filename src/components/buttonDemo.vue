@@ -1,9 +1,25 @@
 <template>
-    <p>buttonDemo</p>
-    <bf-button>你好</bf-button>
-    <bf-button theme="button">你好</bf-button>
-    <bf-button theme="link">你好</bf-button>
-    <bf-button theme="text">你好</bf-button>
+    <p class="eg-title">示例一：主题</p>
+    <bf-button>默认主题</bf-button>
+    <bf-button theme="button">button主题</bf-button>
+    <bf-button theme="link">link主题</bf-button>
+    <bf-button theme="text">text主题</bf-button>
+    <p class="eg-title">示例二：尺寸大小</p>
+    <div>
+        <bf-button theme="button" size="small">small</bf-button>
+        <bf-button theme="button" size="normal">normal</bf-button>
+        <bf-button theme="button" size="big">big</bf-button>
+    </div>
+    <div>
+        <bf-button theme="link" size="small">small</bf-button>
+        <bf-button theme="link" size="normal">normal</bf-button>
+        <bf-button theme="link" size="big">big</bf-button>
+    </div>
+    <div>
+        <bf-button theme="text" size="small">small</bf-button>
+        <bf-button theme="text" size="normal">normal</bf-button>
+        <bf-button theme="text" size="big">big</bf-button>
+    </div>
 </template>
 
 <script lang="ts">
@@ -25,5 +41,8 @@
 </script>
 
 <style lang="scss" scoped>
-
+.eg-title {
+    margin: 15px 0;
+    font-weight: bold;
+}
 </style>
