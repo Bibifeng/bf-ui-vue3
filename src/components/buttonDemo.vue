@@ -42,7 +42,7 @@
         <bf-button theme="link" disabled>link主题</bf-button>
         <bf-button theme="text" disabled>text主题</bf-button>
     </div>
-    <p class="eg-title">示例四：禁用效果</p>
+    <p class="eg-title">示例四：loading效果</p>
     <div>
         <bf-button theme="button" loading>loading</bf-button>
     </div>
