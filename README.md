@@ -66,3 +66,11 @@ export default {
 注意：css最小影响原则
 - UI库的样式，不能使用`scoped`，方便开发者覆盖UI样式
 - 使用class名匹配，将组件的通用样式写在一个文件下，详见`/lib/bf.scss`
+
+#### box弹窗
+
+```html
+<!-- 以下两行代码是等同的 -->
+<BfBox :visible="x" @update:visible="x = $event"></BfBox>
+<BfBox v-model:visible="x"></BfBox>
+```
