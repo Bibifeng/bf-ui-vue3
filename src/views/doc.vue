@@ -12,7 +12,7 @@
                         <router-link to="/doc/button">button</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/dialog">dialog</router-link>
+                        <router-link to="/doc/box">box</router-link>
                     </li>
                     <li>
                         <router-link to="/doc/tabs">tabs</router-link>
