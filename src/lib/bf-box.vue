@@ -9,7 +9,7 @@
                         <span @click="close" class="bf-box-close"></span>
                     </header>
                     <main>
-                        <slot></slot>
+                        <slot name="content"></slot>
                     </main>
                     <footer>
                         <BfButton @click="cancelBtn">取消</BfButton>
