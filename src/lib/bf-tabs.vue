@@ -12,14 +12,14 @@
         </div>
         <!--这里不直接用slot是因为需要检查slot里面的内容，以便动态显示不同的slot，因为tab内容在任何时候都是至多只有一个显示在页面上-->
         <div class="bf-tabs-content">
-            <component v-for="(s, index) in defaultSlots" :is="s" :key="index" class="bf-tabs-content-item" :class="{'selected': s.props.title === selected}"></component>
+            <component :is="curTab" :key="curTab.props.title" class="bf-tabs-content-item"></component>
         </div>
     </div>
 </template>
 
 <script lang="ts">
     import bfTab from './bf-tab.vue';
-    import {ref, onMounted, watchEffect} from 'vue';
+    import {ref, onMounted, watchEffect, computed} from 'vue';
     export default {
         name: "bf-tabs",
         props: {
@@ -39,6 +39,10 @@
             // 每个tab的title组成的数组，用来渲染nav-item
             const titles = defaultSlots.map(t => {
                 return t.props.title;
+            });
+            // 获取当前要显示的tab
+            const curTab = computed(() => {
+                return defaultSlots.find(slotItem => slotItem.props.title === props.selected);
             });
             // 点击切换tab的nav
             const changeNav = (title: string) => {
@@ -68,6 +72,7 @@
 
             return {
                 defaultSlots,
+                curTab,
                 titles,
                 changeNav,
                 curNavItem,
@@ -111,12 +116,6 @@
         }
         &-content {
             padding: 8px 0;
-            &-item {
-                display: none;
-                &.selected {
-                    display: block;
-                }
-            }
         }
     }
 </style>
