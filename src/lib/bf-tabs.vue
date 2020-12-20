@@ -19,7 +19,7 @@
 
 <script lang="ts">
     import bfTab from './bf-tab.vue';
-    import {ref, onMounted, onUpdated} from 'vue';
+    import {ref, onMounted, watchEffect} from 'vue';
     export default {
         name: "bf-tabs",
         props: {
@@ -59,8 +59,12 @@
                 line.value.style.left = (curNavItemLeft - navContentLeft) + 'px';
             };
             // onMounted 和 onUpdated 都接收一个回调方法
-            onMounted(changeLineLeftAndWidth);
-            onUpdated(changeLineLeftAndWidth);
+            // watchEffect 可同时代替 onMounted 和 onUpdated，同样也是接收一个回调方法
+            // 因为 watchEffect 会在 onMounted之前执行一次，此时curNavItem、line、navContent是null，代码会报错导致页面空白
+            // 如果不希望watchEffect在onMounted之前执行，官网建议是将watchEffect放在onMounted之中
+            onMounted(() => {
+                watchEffect(changeLineLeftAndWidth);
+            });
 
             return {
                 defaultSlots,
