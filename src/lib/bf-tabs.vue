@@ -4,7 +4,7 @@
             <div class="bf-tabs-nav-item"
                  :class="{'selected': t === selected}"
                  v-for="(t, tindex) in titles"
-                 :ref=" el => { if (el) navItems[tindex] = el } "
+                 :ref=" el => { if (t === selected) curNavItem = el } "
                  :key="tindex"
                  @click="changeNav(t)"
             >{{ t }}</div>
@@ -45,21 +45,17 @@
                 context.emit('update:selected', title);
             };
 
-            const navItems = ref<HTMLDivElement[]>([]); // 选项卡数组
+            const curNavItem = ref<HTMLDivElement>(null); // 当前被选中的选项卡
             const line = ref<HTMLDivElement>(null); // 选项卡被选中时的下划线
             const navContent = ref<HTMLDivElement>(null); // 选项卡的父容器
             // 方法：动态改变下划线的长度和left值
             const changeLineLeftAndWidth = () => {
                 // 获取当前选中的nav的长度，将长度赋值给下划线
-                const navItemsArr = navItems.value;
-                const curNavItem = navItemsArr.filter(i => {
-                    return i.classList.contains('selected');
-                })[0]; // 注意filter返回的是数组
-                const { width } = curNavItem.getBoundingClientRect();
+                const { width } = curNavItem.value.getBoundingClientRect();
                 line.value.style.width = width + 'px';
                 // 当前选项卡的left减去nav容器的left就是下划线所在的left
                 const { left: navContentLeft } = navContent.value.getBoundingClientRect();
-                const { left: curNavItemLeft } = curNavItem.getBoundingClientRect();
+                const { left: curNavItemLeft } = curNavItem.value.getBoundingClientRect();
                 line.value.style.left = (curNavItemLeft - navContentLeft) + 'px';
             };
             // onMounted 和 onUpdated 都接收一个回调方法
@@ -70,7 +66,7 @@
                 defaultSlots,
                 titles,
                 changeNav,
-                navItems,
+                curNavItem,
                 line,
                 navContent,
             }
