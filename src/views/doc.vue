@@ -18,7 +18,7 @@
 						<router-link to="/doc/tabs">tabs</router-link>
 					</li>
 				</ol>
-			</aside>
+		</aside>
 			<main>
 				<router-view></router-view>
 			</main>
