@@ -1,13 +1,11 @@
 <template>
-    <p>docDemo</p>
+	<p>docDemo</p>
 </template>
 
 <script lang="ts">
-    export default {
-        name: "docDemo",
-    }
+export default {
+	name: 'docDemo',
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
