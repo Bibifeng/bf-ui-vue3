@@ -37,4 +37,36 @@ module.exports = {
         'plugin:prettier/recommended'
     ],
 	// plugins: ['@typescript-eslint'], // 定义了该eslint文件所依赖的插件
+    rules: {
+        'no-console': [1, { allow: ['warn', 'error', 'info'] }],
+        'no-debugger': 1,
+        semi: [2, 'always'],
+        'vue/no-use-v-if-with-v-for': [2, { allowUsingIterationVar: false }],
+        'comma-dangle': 0,
+        'one-var': [
+            1,
+            {
+                var: 'always',
+                let: 'always',
+                const: 'never',
+            },
+        ],
+        'no-throw-literal': 0,
+        'no-new-wrappers': 2,
+        'no-useless-escape': 0,
+        'no-redeclare': 2,
+        'no-tabs': 0,
+        'no-mixed-spaces-and-tabs': 1,
+        'space-before-function-paren': [0, 'always'],
+        'no-unused-vars': 2,
+        'no-dupe-keys': 2,
+        'no-func-assign': 2,
+        'valid-typeof': 2,
+        'no-shadow': 0,
+        'no-prototype-builtins': 0,
+        'no-undef': 0,
+        'no-control-regex': 0,
+        eqeqeq: [2, 'always'],
+        'array-callback-return': 2,
+    },
 };
