@@ -68,5 +68,6 @@ module.exports = {
         'no-control-regex': 0,
         eqeqeq: [2, 'always'],
         'array-callback-return': 2,
+        "vue/multi-word-component-names":"off",
     },
 };
