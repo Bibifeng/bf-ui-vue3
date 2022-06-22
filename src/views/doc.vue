@@ -1,6 +1,6 @@
 <template>
 	<div class="layout">
-		<topnav class="top-nav"></topnav>
+		<page-header class="top-nav"></page-header>
 		<div class="content">
 			<aside v-if="asideVisible">
 				<h2>组件列表</h2>
@@ -18,7 +18,7 @@
 						<router-link to="/doc/tabs">tabs</router-link>
 					</li>
 				</ol>
-		</aside>
+			</aside>
 			<main>
 				<router-view></router-view>
 			</main>
@@ -27,12 +27,12 @@
 </template>
 
 <script lang="ts">
-import Topnav from '../components/topnav.vue';
+import PageHeader from '@/views/frame/header.vue';
 import { Ref, inject } from 'vue';
 export default {
-	name: 'doc',
+	name: 'Doc',
 	components: {
-		Topnav,
+		PageHeader,
 	},
 	setup() {
 		const asideVisible = inject<Ref<boolean>>('asideVisible');

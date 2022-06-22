@@ -1,11 +1,12 @@
 <template>
-	<div class="top-nav">
+	<div class="page-header">
 		<span class="toggle-aside" @click="showAside"></span>
 		<div class="logo">
-			<img alt="Vue logo" src="../assets/logo.png" />
+			<svg class="icon">
+				<use xlink:href="#icon-vue"></use>
+			</svg>
 		</div>
 		<ul class="menu">
-			<li>菜单1</li>
 			<li>
 				<router-link to="/doc">组件文档</router-link>
 			</li>
@@ -16,7 +17,7 @@
 <script lang="ts">
 import { Ref, inject } from 'vue';
 export default {
-	name: 'topnav',
+	name: 'PageHeader',
 	setup() {
 		const asideVisible = inject<Ref<boolean>>('asideVisible');
 		const showAside = () => {
@@ -28,12 +29,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.top-nav {
-	background: antiquewhite;
+.page-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 10px;
+	padding: 10px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -50,17 +50,18 @@ export default {
 		transform: translateY(-50%);
 	}
 	.logo {
-		img {
-			width: 4em;
-			height: 4em;
-		}
-		margin: 6px;
+		margin: 0 6px;
 		cursor: pointer;
+		.icon {
+			width: 32px;
+			height: 32px;
+		}
 	}
 	.menu {
 		display: flex;
 		white-space: nowrap;
 		flex-wrap: nowrap;
+		color: $color-primary;
 		> li {
 			margin: 0 1em;
 		}
