@@ -1,10 +1,10 @@
 <template>
-	<p>docDemo</p>
+	<p>快速开始</p>
 </template>
 
 <script lang="ts">
 export default {
-	name: 'docDemo',
+	name: 'DocStart',
 };
 </script>
 

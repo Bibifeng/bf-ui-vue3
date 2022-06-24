@@ -1,8 +1,9 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "packages/*": ["./packages/*"],
-      "@/*": ["./src/*"]
-    }
-  }
+	"compilerOptions": {
+		"lib": ["es2015"],
+		"paths": {
+			"packages/*": ["./packages/*"],
+			"@/*": ["./src/*"]
+		}
+	}
 }

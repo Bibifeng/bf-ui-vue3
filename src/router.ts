@@ -1,45 +1,66 @@
-import { createWebHashHistory, createRouter } from 'vue-router';
-import Home from '/src/views/home/index.vue';
-import Doc from '/src/views/doc.vue';
-import SwitchDemo from '/src/components/switchDemo.vue';
-import ButtonDemo from '/src/components/buttonDemo.vue';
-import BoxDemo from '/src/components/boxDemo.vue';
-import TabsDemo from '/src/components/tabsDemo.vue';
-import DocHome from '/src/components/docDemo.vue';
+import { createWebHistory, createRouter } from 'vue-router';
+import { defineAsyncComponent } from 'vue';
 
-const history = createWebHashHistory();
+const _import = path => defineAsyncComponent(() => import(/* @vite-ignore */path));
+
+const menus = [
+    {
+        path: '/doc/start',
+        meta: {
+            category: '指南',
+            name: '开始',
+        },
+        component: _import('/src/views/doc/start/index.vue'),
+    },
+    {
+        path: '/doc/switch',
+        meta: {
+            category: '基础组件',
+            name: 'switch',
+        },
+        component: _import('/src/components/switchDemo.vue'),
+    },
+    {
+        path: '/doc/button',
+        meta: {
+            category: '基础组件',
+            name: 'button',
+        },
+        component: _import('/src/components/buttonDemo.vue'),
+    },
+    {
+        path: '/doc/box',
+        meta: {
+            category: '基础组件',
+            name: 'box',
+        },
+        component: _import('/src/components/boxDemo.vue'),
+    },
+    {
+        path: '/doc/tabs',
+        meta: {
+            category: '基础组件',
+            name: 'tabs',
+        },
+        component: _import('/src/components/tabsDemo.vue'),
+    },
+];
+
+const routes = [
+    {
+        path: '/',
+        component: _import('/src/views/home/index.vue'),
+    },
+    {
+        path: '/doc',
+        component: _import('/src/views/doc/index.vue'),
+        redirect: '/doc/start',
+        children: menus,
+    },
+];
+
 export const router = createRouter({
-	history: history,
-	routes: [
-		{
-			path: '/',
-			component: Home,
-		},
-		{
-			path: '/doc',
-			component: Doc,
-			children: [
-				{
-					path: '',
-					component: DocHome,
-				},
-				{
-					path: 'switch',
-					component: SwitchDemo,
-				},
-				{
-					path: 'button',
-					component: ButtonDemo,
-				},
-				{
-					path: 'box',
-					component: BoxDemo,
-				},
-				{
-					path: 'tabs',
-					component: TabsDemo,
-				},
-			],
-		},
-	],
+	history: createWebHistory(),
+	routes,
 });
+export { menus };
