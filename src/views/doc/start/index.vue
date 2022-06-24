@@ -1,5 +1,7 @@
 <template>
-	<p>快速开始</p>
+	<article class="markdown-body">
+		<h1>快速开始</h1>
+	</article>
 </template>
 
 <script lang="ts">
