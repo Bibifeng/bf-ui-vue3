@@ -14,7 +14,7 @@ const menus = [
             category: '指南',
             name: '开始',
         },
-        component: mdComponent('/src/views/doc/md/start.md'),
+        component: mdComponent('/src/views/doc/start/index.md'),
     },
     {
         path: '/doc/switch',
@@ -22,7 +22,7 @@ const menus = [
             category: '基础组件',
             name: 'switch',
         },
-        component: _import('/src/components/switchDemo.vue'),
+        component: _import('/src/views/doc/switch/index.vue'),
     },
     {
         path: '/doc/button',

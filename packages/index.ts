@@ -1,6 +1,6 @@
-import MarkdownPage from './markdown-page';
+import Switch from './switch';
 
-const components = [MarkdownPage];
+const components = [Switch];
 
 const install = app => {
     components.forEach(component => {
@@ -10,4 +10,4 @@ const install = app => {
 
 export default {
     install,
-}
+};

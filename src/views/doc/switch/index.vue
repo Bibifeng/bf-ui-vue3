@@ -5,13 +5,9 @@
 </template>
 
 <script lang="ts">
-import bfSwitch from '../lib/switch.vue';
 import { ref } from 'vue';
 export default {
-	name: 'switchDemo',
-	components: {
-		bfSwitch,
-	},
+	name: 'SwitchDemo',
 	setup() {
 		const bool = ref(false);
 		return {
