@@ -10,7 +10,6 @@
 	},
 	"dependencies": {
 		"github-markdown-css": "^5.1.0",
-		"highlight.js": "^11.5.1",
 		"marked": "^2.0.1",
 		"vue": "^3.0.0-rc.1",
 		"vue-router": "4.0.3"
