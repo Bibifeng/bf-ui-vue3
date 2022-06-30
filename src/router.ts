@@ -1,7 +1,11 @@
 import { createWebHistory, createRouter } from 'vue-router';
-import { defineAsyncComponent } from 'vue';
+import { defineAsyncComponent, h } from 'vue';
+import MarkdownPage from '/src/components/markdown-page/src/markdown-page.vue';
 
+// 懒加载路由
 const _import = path => defineAsyncComponent(() => import(/* @vite-ignore */path));
+// md文件需要经过render函数利用MarkdownPage模板 生成vue component
+const mdComponent = path => h(MarkdownPage, { path });
 
 const menus = [
     {
@@ -10,7 +14,7 @@ const menus = [
             category: '指南',
             name: '开始',
         },
-        component: _import('/src/views/doc/start/index.vue'),
+        component: mdComponent('/src/views/doc/md/start.md'),
     },
     {
         path: '/doc/switch',
