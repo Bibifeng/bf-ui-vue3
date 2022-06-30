@@ -3,7 +3,7 @@
 		<!-- 头部导航和banner区域 -->
 		<div class="header-banner">
 			<!-- 首页头部 -->
-			<page-header></page-header>
+			<page-header class="header"></page-header>
 			<!-- 首页banner -->
 			<div class="banner">
 				<h1 class="name">bf-ui</h1>
@@ -60,6 +60,12 @@ export default {
 		background: rgb(250, 227, 230);
 		background: linear-gradient(139deg, rgba(250, 227, 230, 1) 0%, rgba(197, 193, 242, 1) 100%);
 		clip-path: ellipse(90% 60% at 50% 40%);
+
+		.header {
+			position: fixed;
+			z-index: 100;
+		}
+
 		.banner {
 			padding: 100px 0;
 			display: flex;

@@ -1,7 +1,9 @@
 <template>
 	<div class="page-header">
-		<span class="toggle-aside" @click="showAside"></span>
-		<div class="logo">
+		<svg v-if="showMenuBtn" class="icon toggle-aside" @click="showAside">
+			<use :xlink:href="menuIcon"></use>
+		</svg>
+		<div class="logo" @click="toHome">
 			<svg class="icon">
 				<use xlink:href="#icon-vue"></use>
 			</svg>
@@ -15,15 +17,48 @@
 </template>
 
 <script lang="ts">
-import { Ref, inject } from 'vue';
+import { Ref, inject, computed } from 'vue';
+import { useRouter } from 'vue-router';
 export default {
 	name: 'PageHeader',
+	props: {
+		// 是否展示左侧菜单切换按钮
+		showMenuBtn: {
+			type: Boolean,
+			default: false,
+		},
+	},
 	setup() {
+		// 初始化路由
+		const router = useRouter();
+
+		// 控制菜单显隐
 		const asideVisible = inject<Ref<boolean>>('asideVisible');
+
+		// 切换菜单icon
+		const menuIcon = computed(() => {
+			return asideVisible.value ? '#icon-shouqicaidan' : '#icon-zhankaicaidan';
+		});
+
+		/**
+		 * @desc 点击菜单按钮展开or收起
+		 */
 		const showAside = () => {
 			asideVisible.value = !asideVisible.value;
 		};
-		return { showAside };
+
+		/**
+		 * @desc 返回首页
+		 */
+		const toHome = () => {
+			router.replace('/');
+		};
+
+		return {
+			showAside,
+			menuIcon,
+			toHome,
+		};
 	},
 };
 </script>
@@ -34,16 +69,15 @@ export default {
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px;
-	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 10;
+	box-shadow: $box-shadow;
+	background: #fff;
 	.toggle-aside {
 		display: none;
 		width: 24px;
 		height: 24px;
-		background: red;
 		position: absolute;
 		left: 16px;
 		top: 50%;
