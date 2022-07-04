@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import DemoNormal from './demo-normal.preview.vue';
+import DemoNormal from './normal-demo.vue';
 export default {
 	components: {
 		DemoNormal,

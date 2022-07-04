@@ -1,4 +1,4 @@
-<preview>常规用法1</preview>
+<demo>常规用法2</demo>
 
 <template>
 	<bf-switch v-model:value="bool" />
