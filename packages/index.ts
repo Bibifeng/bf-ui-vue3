@@ -1,6 +1,7 @@
+import Button from './button';
 import Switch from './switch';
 
-const components = [Switch];
+const components = [Button, Switch];
 
 const install = app => {
     components.forEach(component => {
