@@ -6,9 +6,9 @@ const mdToJs = str => {
 	return `export default ${content}`;
 };
 
-export default function md2VuePlugin() {
+export default function md2Vue() {
 	return {
-		name: 'md2VuePlugin', // 插件的名称
+		name: 'md2Vue', // 插件的名称
 		transform(src: any, id: any) {
 			if (id.endsWith('.md')) {
 				return {

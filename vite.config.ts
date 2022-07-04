@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue'; // Vue 3 单文件组件的解析插件
-import md2VuePlugin from './plugins/md';
+import md2Vue from './plugins/vite-plugin-md2Vue';
+import sourceCode from './plugins/vite-plugin-sourceCode';
 
 const { resolve } = require('path');
 
 export default defineConfig({
     plugins: [
         vue(),
-        md2VuePlugin(),
+        md2Vue(),
+        sourceCode,
     ],
     resolve: {
         /**
